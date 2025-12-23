@@ -177,6 +177,25 @@ flowchart TD
 - High performance
 - Native concurrency with goroutines
 
+### Data Model
+
+#### Order Timeline Aggregation - Entity Relationship Diagram
+
+```mermaid
+erDiagram
+    ORDER_TIMELINE_EVENTS {
+        UUID id PK
+        UUID order_id FK
+        VARCHAR event_type
+        VARCHAR event_source
+        VARCHAR status
+        TIMESTAMP occurred_at
+        JSONB metadata
+        JSONB raw_event
+        TIMESTAMP created_at
+    }
+```
+
 # Kế hoạch triển khai
 
 ## Phase 1: MVP
