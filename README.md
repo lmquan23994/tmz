@@ -153,12 +153,62 @@ flowchart TD
 
 # Kế hoạch triển khai
 
-### Phase 1 (MVP)
+## Phase 1: MVP
 
-- Order timeline aggregation
-- Email notifications cho các mốc chính
+### Mục tiêu
 
-### Phase 2
+- Xây dựng luồng Order timeline aggregation
+- Email notification cho các mốc timeline quan trọng
+
+### Milestone 1 - Infrastucture setup
+
+PIC: Devops Engineer + Technical Leader
+
+Deliverables:
+- Kafka cluster hoạt động với các topic chứa thông tin về đơn hàng, được produce từ các external service
+- Database schema deployed
+- Redis cluster
+- CI/CD pipeline
+ 
+### Milestone 2 - Event Processing Pipeline
+
+PIC: Backend Engineer
+
+Deliverables:
+- Kafka consumer implementation
+- Event Processor service với 3 components (Validator, Transformer, Enricher)
+
+### Milestone 3 - Timeline Builder & State Manager
+
+PIC: Backend Engineer
+
+Deliverables:
+- Timeline Builder implementation
+- State Snapshot
+- Rest API cho truy vấn order timeline
+
+### Milestone 4 - Multi-Channel Notification Service - Email Only
+
+PIC: Backend Engineer
+
+Deliverables:
+- Kafka consumer các mốc timeline quan trọng:
+    + Order confirmed
+    + Manufacturing started
+    + Manufacturing completed
+    + Order shipped
+    + Order delivered
+- Triển khai các component của Multi-Channel Notification Service chỉ với Email Channel
+
+## Phase 2: SMS Notification
+
+### Mục tiêu
 
 - SMS Notification
-- Tracking Order Portal
+
+### Milestone 1 - Multi-Channel Notification Service - SMS
+
+PIC: Backend Engineer
+
+Deliverables:
+- Triển khai các component của Multi-Channel Notification Service với SMS Channel
