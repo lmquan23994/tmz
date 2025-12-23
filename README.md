@@ -151,6 +151,32 @@ flowchart TD
     R --> T
 ```
 
+### Tech stack
+
+#### Database - PostgreSQL
+
+- Đảm bảo ACID
+- JSONB Support
+- Advenced Query
+- Dễ scale luồng đọc
+
+#### Message Broker - Kafka
+
+- Phù hợp với event sourcing
+- High throughput
+- Multiple consumer pattern
+
+#### Caching - Redis
+
+- Độ trễ thấp
+- Rich data structures (String, Hash, Sorted Set)
+- TTL support cho automatic expiration
+
+#### Backend Language - Golang
+
+- High performance
+- Native concurrency with goroutines
+
 # Kế hoạch triển khai
 
 ## Phase 1: MVP
